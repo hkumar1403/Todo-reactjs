@@ -229,3 +229,65 @@ body {
   color: var(--text-muted);
   font-size: 14px;
 }
+
+/* Editing state (isEditing === true) */
+.task-list > li:has(input[type="text"]) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  margin-bottom: 4px;
+  border-radius: var(--radius);
+  background: rgba(35, 131, 226, 0.06);
+  border: 1px solid rgba(35, 131, 226, 0.25);
+  box-shadow: 0 0 0 1px rgba(35, 131, 226, 0.1);
+}
+
+.task-list > li:has(input[type="text"]) input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--bg-card);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(35, 131, 226, 0.15);
+}
+
+.task-list > li:has(input[type="text"]) input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(35, 131, 226, 0.25);
+}
+
+.task-list > li:has(input[type="text"]) button {
+  padding: 8px 14px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+
+.task-list > li:has(input[type="text"]) button:first-of-type {
+  background: var(--accent);
+  color: #fff;
+}
+
+.task-list > li:has(input[type="text"]) button:first-of-type:hover {
+  background: var(--accent-hover);
+}
+
+.task-list > li:has(input[type="text"]) button:last-of-type {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.task-list > li:has(input[type="text"]) button:last-of-type:hover {
+  background: rgba(55, 53, 47, 0.08);
+  color: var(--text);
+}

@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TaskInput } from "./components/TaskInput";
 import { TaskList } from "./components/TaskList";
 import { Select } from "./components/Select";
@@ -7,9 +7,16 @@ import { Select } from "./components/Select";
 function App() {
   const [input, setInput] = useState("");
   const [filter, setFilter] = useState("all");
-  const initialTasks = [
-  ];
-  const [tasks, setTasks] = useState(initialTasks);
+  // const initialTasks = [];
+  const [tasks, setTasks] = useState(() => {
+    const saved = localStorage.getItem("tasks");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   function handleChange(e) {
     setInput(e.target.value);
   }
@@ -42,9 +49,11 @@ function App() {
   function handleFilter(e) {
     setFilter(e);
   }
-  function handleEdit(e) {
-    e.stopPropagation();
-    setFilter(e);
+  function handleEdit(id, title) {
+    if (title === "") return;
+    setTasks(
+      tasks.map((task) => (task.id === id ? { ...task, title: title } : task)),
+    );
   }
 
   let visibleTasks = [];
