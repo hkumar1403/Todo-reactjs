@@ -1,16 +1,51 @@
-# React + Vite
+# 📝 Todo App — Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a fully functional Todo application built with React. It allows users to:
 
-Currently, two official plugins are available:
+Add new tasks
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Toggle tasks between completed and pending states
 
-## React Compiler
+Edit existing tasks inline
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Delete tasks
 
-## Expanding the ESLint configuration
+Filter tasks (All / Completed / Pending)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Persist tasks using localStorage
+
+Use keyboard shortcuts (Enter / Esc) for faster interaction
+
+🎯 Purpose of This Project
+
+The primary goal of this project was skill-building, not complexity.
+
+I intentionally chose a simple and familiar problem (a Todo app) so I could focus on:
+
+Strengthening my React fundamentals
+
+Writing clean, readable JavaScript logic
+
+Understanding state management, derived state, and component responsibilities
+
+Practicing real-world patterns like inline editing, keyboard accessibility, and persistence
+
+I avoided copy-pasting solutions and focused on reasoning through each feature step by step.
+
+🤖 Use of AI
+
+AI was used only for CSS/styling assistance and for writing this readme 😁
+
+All application logic, state management, and component architecture were implemented by me.
+
+This decision was intentional — the goal was to improve problem-solving and React thinking, not just produce a visually polished app.
+
+🛠️ Tech Stack
+
+React
+
+JavaScript (ES6+)
+
+CSS
+
+localStorage (for persistence)
